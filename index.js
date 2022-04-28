@@ -35,7 +35,7 @@ const promptMgr = () => {
     .then((answers) => {
       console.log(answers);
       //   const mgr = new Manager(answers.name, answers.mgrId, answers.mgrEmail, answers.officeNum);
-      //   team.push(mgr);
+        team.push(promptMgr);
       promptMenu();
     });
 };
@@ -45,20 +45,20 @@ const promptMenu = () => {
   return inquirer
     .prompt([
       {
-        type: "menu",
+        type: "list",
         name: "menu",
         message: "Who would you like to add to your team?",
         choices: ["Add engineer", "Add intern", "Finished building my team"],
       },
     ])
     .then((userChoice) => {
-      if (userChoice === "Add engineer") {
+      if (userChoice.menu === "Add engineer") {
         promptEngineer();
       }
-      if (userChoice === "Add intern") {
+      if (userChoice.menu === "Add intern") {
         promptIntern();
       }
-      if (userChoice === "Finished building my team") {
+      if (userChoice.menu === "Finished building my team") {
         generateTeam();
       }
     });
@@ -97,7 +97,7 @@ const promptEngineer = () => {
     .then((answers) => {
       console.log(answers);
       //   const engineer = new Engineer(answers.name, answers.employeeId, answers.employeeEmail, answers.employeeGit);
-      //   team.push(engineer);
+        team.push(promptEngineer);
       promptMenu();
     });
 };
@@ -105,9 +105,9 @@ const promptEngineer = () => {
 // intern prompt
 const promptIntern = () => {
   console.log(`
-    ****************
+    **************
     Add new intern 
-    ****************
+    **************
     `);
   return inquirer
     .prompt([
@@ -135,17 +135,18 @@ const promptIntern = () => {
     .then((answers) => {
       console.log(answers);
       //   const intern = new Intern(answers.name, answers.employeeId, answers.employeeEmail, answers.employeeGit);
-      //   team.push(intern);
+        team.push(promptIntern);
       promptMenu();
     });
 };
 
 const generateTeam = () => {
   console.log(`
-    ******
+    **************************
     Completed building my team
-    ******
+    **************************
     `);
+    console.log(team);
 
 };
 
