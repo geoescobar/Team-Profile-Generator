@@ -34,8 +34,8 @@ const promptMgr = () => {
     ])
     .then((answers) => {
       console.log(answers);
-      //   const mgr = new Manager(answers.name, answers.mgrId, answers.mgrEmail, answers.officeNum);
-        team.push(promptMgr.name); // change to team.push(answers.name); --> this is how you get individual team members name 
+        const manager = new Manager(answers.name, answers.mgrId, answers.mgrEmail, answers.officeNum);
+        team.push(manager); 
       promptMenu();
     });
 };
@@ -96,8 +96,8 @@ const promptEngineer = () => {
     ])
     .then((answers) => {
       console.log(answers);
-      //   const engineer = new Engineer(answers.name, answers.employeeId, answers.employeeEmail, answers.employeeGit);
-        team.push(promptEngineer.name);
+        const engineer = new Engineer(answers.name, answers.employeeId, answers.employeeEmail, answers.employeeGit);
+        team.push(engineer);
       promptMenu();
     });
 };
@@ -134,8 +134,8 @@ const promptIntern = () => {
     ])
     .then((answers) => {
       console.log(answers);
-      //   const intern = new Intern(answers.name, answers.employeeId, answers.employeeEmail, answers.employeeGit);
-        team.push(promptIntern.name);
+        const intern = new Intern(answers.name, answers.employeeId, answers.employeeEmail, answers.employeeGit);
+        team.push(intern);
       promptMenu();
     });
 };
