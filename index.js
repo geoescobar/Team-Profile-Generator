@@ -18,12 +18,12 @@ const promptMgr = () => {
       },
       {
         type: "input",
-        name: "mgrId",
+        name: "employeeId",
         message: "What is your employee ID?",
       },
       {
         type: "input",
-        name: "mgrEmail",
+        name: "employeeEmail",
         message: "What is your email?",
       },
       {
@@ -35,7 +35,7 @@ const promptMgr = () => {
     .then((answers) => {
       console.log(answers);
       //   const mgr = new Manager(answers.name, answers.mgrId, answers.mgrEmail, answers.officeNum);
-        team.push(promptMgr);
+        team.push(promptMgr.name); // change to team.push(answers.name); --> this is how you get individual team members name 
       promptMenu();
     });
 };
@@ -97,7 +97,7 @@ const promptEngineer = () => {
     .then((answers) => {
       console.log(answers);
       //   const engineer = new Engineer(answers.name, answers.employeeId, answers.employeeEmail, answers.employeeGit);
-        team.push(promptEngineer);
+        team.push(promptEngineer.name);
       promptMenu();
     });
 };
@@ -128,18 +128,19 @@ const promptIntern = () => {
       },
       {
         type: "input",
-        name: "employeeGit",
-        message: "What is the link to their Github?",
+        name: "employeeSchool",
+        message: "What university do you attend?",
       },
     ])
     .then((answers) => {
       console.log(answers);
       //   const intern = new Intern(answers.name, answers.employeeId, answers.employeeEmail, answers.employeeGit);
-        team.push(promptIntern);
+        team.push(promptIntern.name);
       promptMenu();
     });
 };
 
+// generate team 
 const generateTeam = () => {
   console.log(`
     **************************
