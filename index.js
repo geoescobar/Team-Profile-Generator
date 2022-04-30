@@ -148,7 +148,7 @@ const generateTeam = () => {
     **************************
     `);
     // buildTeam(team);
-    fs.writeFileSync('test.html', buildTeam(team), "utf-8")
+    fs.writeFileSync('test.html', buildTeam(team))
 };
 
 

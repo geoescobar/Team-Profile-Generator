@@ -141,6 +141,8 @@ const buildTeam = (genTeam) => {
 
       `;
   console.log(fullHtml);
+  return fullHtml;
 };
+
 
 module.exports = buildTeam;
