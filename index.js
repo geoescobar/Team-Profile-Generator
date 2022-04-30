@@ -7,7 +7,37 @@ const team = [];
 const buildTeam = require("./src/generate.js");
 const fs = require("fs");
 
-// manager prompts
+
+
+// menu prompt
+const promptMenu = () => {
+  return inquirer
+    .prompt([
+      {
+        type: "list",
+        name: "menu",
+        message: "Who would you like to add to your team?",
+        choices: ["Add manager" , "Add engineer", "Add intern", "Finished building my team"],
+      },
+    ])
+    .then((userChoice) => {
+      if (userChoice.menu === "Add manager") {
+        promptMgr();
+      }
+
+      if (userChoice.menu === "Add engineer") {
+        promptEngineer();
+      }
+      if (userChoice.menu === "Add intern") {
+        promptIntern();
+      }
+      if (userChoice.menu === "Finished building my team") {
+        generateTeam();
+      }
+    });
+};
+
+// manager prompt
 const promptMgr = () => {
   return inquirer
     .prompt([
@@ -40,29 +70,6 @@ const promptMgr = () => {
     });
 };
 
-// menu prompt
-const promptMenu = () => {
-  return inquirer
-    .prompt([
-      {
-        type: "list",
-        name: "menu",
-        message: "Who would you like to add to your team?",
-        choices: ["Add engineer", "Add intern", "Finished building my team"],
-      },
-    ])
-    .then((userChoice) => {
-      if (userChoice.menu === "Add engineer") {
-        promptEngineer();
-      }
-      if (userChoice.menu === "Add intern") {
-        promptIntern();
-      }
-      if (userChoice.menu === "Finished building my team") {
-        generateTeam();
-      }
-    });
-};
 
 // engineer prompt
 const promptEngineer = () => {
@@ -148,7 +155,7 @@ const generateTeam = () => {
     **************************
     `);
     // buildTeam(team);
-    fs.writeFileSync('test.html', buildTeam(team))
+    fs.writeFileSync('./dist/test.html', buildTeam(team))
 };
 
 

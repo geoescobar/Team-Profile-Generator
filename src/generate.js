@@ -19,30 +19,32 @@ const buildTeam = (genTeam) => {
     }
   }
   const buildManager = () => {
-    let managerCard = `<div class="row">
-  <div class="col s6 offset-s3">
-    <div class="card blue-grey darken-1">
-      <div class="card-content white-text z-depth-4">
-        <span class="card-title">${managerArr[0].name}</span>
-        <p><i class="fa-solid fa-mug-hot"></i>${managerArr[0].getRole()}</p>
+    for (i = 0; i < managerArr.length ; i++) {
+      let managerCard = `<div class="row">
+      <div class="col s6 offset-s3">
+        <div class="card blue-grey darken-1">
+          <div class="card-content white-text z-depth-4">
+            <span class="card-title">${managerArr[i].name}</span>
+            <p><i class="fa-solid fa-mug-hot"></i>${managerArr[i].getRole()}</p>
+          </div>
+          <div class="card-action z-depth-4">
+            <p>ID: <a href="#" target="_blank">${managerArr[i].employeeId}</a></p>
+          </div>
+          <div class="card-action z-depth-4">
+            <p>Email: <a href="mailto:${
+              managerArr[i].employeeEmail
+            }" target="_blank">${managerArr[i].employeeEmail}</a> </p>
+          </div>
+          <div class="card-action z-depth-4">
+            <p>Office Number: <a href="#" target="_blank">${
+              managerArr[i].officeNum
+            }</a> </p>
+          </div>
+        </div>
       </div>
-      <div class="card-action z-depth-4">
-        <p>ID: <a href="#" target="_blank">${managerArr[0].employeeId}</a></p>
-      </div>
-      <div class="card-action z-depth-4">
-        <p>Email: <a href="mailto:${
-          managerArr[0].employeeEmail
-        }" target="_blank">${managerArr[0].employeeEmail}</a> </p>
-      </div>
-      <div class="card-action z-depth-4">
-        <p>Office Number: <a href="#" target="_blank">${
-          managerArr[0].officeNum
-        }</a> </p>
-      </div>
-    </div>
-  </div>
-</div>`;
-    html.push(managerCard);
+    </div>`;
+        html.push(managerCard);
+    }
   };
 
   const buildEngineer = () => {
@@ -113,12 +115,12 @@ const buildTeam = (genTeam) => {
     <head>
       <meta charset="UTF-8" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.i" />
       <title>Team Profile Generator</title>
       <!-- materialize cdn -->
       <link
         rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.i.i/css/materialize.min.css"
       />
     </head>
   
