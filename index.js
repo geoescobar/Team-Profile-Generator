@@ -4,7 +4,7 @@ const Manager = require("./team/manager.js");
 const Engineer = require("./team/engineer.js");
 const Intern = require("./team/intern.js");
 const team = [];
-const generate = require("./output/generate.js");
+const buildTeam = require("./output/generate.js");
 const fs = require("fs");
 
 // manager prompts
@@ -34,7 +34,7 @@ const promptMgr = () => {
     ])
     .then((answers) => {
       console.log(answers);
-        const manager = new Manager(answers.name, answers.mgrId, answers.mgrEmail, answers.officeNum);
+        const manager = new Manager(answers.name, answers.employeeId, answers.employeeEmail, answers.officeNum);
         team.push(manager); 
       promptMenu();
     });
@@ -134,7 +134,7 @@ const promptIntern = () => {
     ])
     .then((answers) => {
       console.log(answers);
-        const intern = new Intern(answers.name, answers.employeeId, answers.employeeEmail, answers.employeeGit);
+        const intern = new Intern(answers.name, answers.employeeId, answers.employeeEmail, answers.employeeSchool);
         team.push(intern);
       promptMenu();
     });
@@ -147,8 +147,7 @@ const generateTeam = () => {
     Completed building my team
     **************************
     `);
-    console.log(team);
-
+    buildTeam(team);
 };
 
 // invoke function
