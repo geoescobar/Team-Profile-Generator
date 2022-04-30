@@ -1,10 +1,10 @@
 // variables
 const inquirer = require("inquirer");
-const Manager = require("./team/manager.js");
-const Engineer = require("./team/engineer.js");
-const Intern = require("./team/intern.js");
+const Manager = require("./lib/manager.js");
+const Engineer = require("./lib/engineer.js");
+const Intern = require("./lib/intern.js");
 const team = [];
-const buildTeam = require("./output/generate.js");
+const buildTeam = require("./src/generate.js");
 const fs = require("fs");
 
 // manager prompts
@@ -147,8 +147,12 @@ const generateTeam = () => {
     Completed building my team
     **************************
     `);
-    buildTeam(team);
+    // buildTeam(team);
+    fs.writeFileSync('test.html', buildTeam(team), "utf-8")
 };
+
+
+
 
 // invoke function
 promptMgr();
