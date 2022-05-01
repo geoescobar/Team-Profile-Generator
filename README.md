@@ -44,16 +44,20 @@
   * In this project I learned a lot about object orienter programming. Especially about classes, constructors, and jest testing. 
   
   ---
-  ## Links 
+  ## Links  
   
   #### GitHub Repo:
   * [Github Repo](https://github.com/geoescobar/Team-Profile-Generator)
-  ![alt text](http://url/to/img.png)
+  ![Repo](./assets/repo.png)
+
+  #### GitHub Pages:
+  * [Github Pages](https://geoescobar.github.io/Team-Profile-Generator/)
+  ![Repo](./assets/pages.png)
 
   #### Screencastify Recording:
 
-  * [Screencastify]()
-  <!-- ![Alt Text](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif) -->
+  * [Screencastify](https://drive.google.com/file/d/1RndrowXTYhUxvuAS5jFLOvC1Jn1RyNDe/view)
+  ![Repo Gif](./assets/repo.gif)
 
 
   ---

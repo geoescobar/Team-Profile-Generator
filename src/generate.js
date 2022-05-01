@@ -19,8 +19,8 @@ const buildTeam = (genTeam) => {
     }
   }
   const buildManager = () => {
-    for (i = 0; i < managerArr.length ; i++) {
-      let managerCard = `<div class="row">
+    for (i = 0; i < managerArr.length; i++) {
+      let managerCard = `
       <div class="col s6 offset-s3">
         <div class="card blue-grey darken-1">
           <div class="card-content white-text z-depth-4">
@@ -28,7 +28,9 @@ const buildTeam = (genTeam) => {
             <p><i class="fa-solid fa-mug-hot"></i>${managerArr[i].getRole()}</p>
           </div>
           <div class="card-action z-depth-4">
-            <p>ID: <a href="#" target="_blank">${managerArr[i].employeeId}</a></p>
+            <p>ID: <a href="#" target="_blank">${
+              managerArr[i].employeeId
+            }</a></p>
           </div>
           <div class="card-action z-depth-4">
             <p>Email: <a href="mailto:${
@@ -42,8 +44,8 @@ const buildTeam = (genTeam) => {
           </div>
         </div>
       </div>
-    </div>`;
-        html.push(managerCard);
+    `;
+      html.push(managerCard);
     }
   };
 
@@ -64,7 +66,9 @@ const buildTeam = (genTeam) => {
         }" target="_blank">${engineerArr[i].employeeEmail}</a> </p>
       </div>
       <div class="card-action z-depth-4">
-        <p>GitHub: <a href="#" target="_blank">${
+        <p>GitHub: <a href=${
+          engineerArr[i].employeeGit
+        } target="_blank">${
           engineerArr[i].employeeGit
         }</a> </p>
       </div>
@@ -133,9 +137,9 @@ const buildTeam = (genTeam) => {
           <a href="#" class="brand-logo center">Team Profile</a>
         </div>
       </nav>
-  
+      <div class="row">
       ${htmlStr}
-
+      </div>
   <!-- font awesome cdn -->
     <script src="https://use.fontawesome.com/e9219c1b6e.js"></script>
   </body>
@@ -145,6 +149,5 @@ const buildTeam = (genTeam) => {
   console.log(fullHtml);
   return fullHtml;
 };
-
 
 module.exports = buildTeam;
