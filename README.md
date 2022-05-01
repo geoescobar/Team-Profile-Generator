@@ -55,8 +55,8 @@
   ![Repo](./assets/pages.png)
 
   #### Screencastify Recording:
-
   * [Screencastify](https://drive.google.com/file/d/1RndrowXTYhUxvuAS5jFLOvC1Jn1RyNDe/view)
+  
   ![Repo Gif](./assets/repo.gif)
 
 
