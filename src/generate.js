@@ -119,9 +119,9 @@ const buildTeam = (genTeam) => {
       <title>Team Profile Generator</title>
       <!-- materialize cdn -->
       <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.i.i/css/materialize.min.css"
-      />
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
     </head>
   
   

@@ -154,7 +154,7 @@ const generateTeam = () => {
     Completed building my team
     **************************
     `);
-    // buildTeam(team);
+    // build team html 
     fs.writeFileSync('./dist/test.html', buildTeam(team))
 };
 
