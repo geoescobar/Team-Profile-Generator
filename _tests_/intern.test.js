@@ -1,4 +1,4 @@
-const intern = "../lib/intern";
+const Intern = require("../lib/intern");
 
 describe("internName", () => {
   it("should return back intern name", () => {

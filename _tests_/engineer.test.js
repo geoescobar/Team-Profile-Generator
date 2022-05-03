@@ -1,4 +1,4 @@
-const Engineer = "../lib/engineer";
+const Engineer = require("../lib/engineer");
 
 describe("engineerName", () => {
   it("should return back engineer name", () => {
@@ -9,18 +9,10 @@ describe("engineerName", () => {
 });
 
 describe("getRole", () => {
-  it("should return back employee as role", () => {
-    const employee = new Engineer();
+  it("should return back engineer as role", () => {
+    const engineer = new Engineer();
 
     expect(engineer.getRole()).toEqual("Engineer");
-  });
-});
-
-describe("engineerId", () => {
-  it("should return back engineer Id", () => {
-    const engineer = new Engineer("George", "200");
-
-    expect(engineer.employeeId).toEqual("200");
   });
 });
 
@@ -42,5 +34,13 @@ describe("engineerGit", () => {
     );
 
     expect(engineer.employeeGit).toEqual("github.com/geoescobar");
+  });
+
+  describe("engineerId", () => {
+    it("should return back engineer Id", () => {
+      const engineer = new Engineer("George", "200");
+
+      expect(engineer.employeeId).toEqual("200");
+    });
   });
 });
